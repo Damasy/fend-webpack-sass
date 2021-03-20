@@ -14,6 +14,14 @@ function handleSubmit(event) {
     .then(function(data) {
         document.getElementById('results').innerHTML = data.message
     })
+
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(res => {
+        return res.json()
+    })
+    .then(function(data) {
+        document.getElementById('API').innerHTML = data.title
+    })
 }
 
 export { handleSubmit }
